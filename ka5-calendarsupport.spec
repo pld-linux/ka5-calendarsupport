@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		calendarsupport
 Summary:	Calendarsupport
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6bcf7dd2362091c814beffc92c8223cc
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	bc7fa09534b25cbc47555b64d54785b0
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -22,16 +22,15 @@ BuildRequires:	gettext-devel
 BuildRequires:	ka5-akonadi-calendar-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-mime-devel >= %{kdeappsver}
-BuildRequires:	ka5-kcalcore-devel >= %{kdeappsver}
+BuildRequires:	ka5-akonadi-notes-devel >= %{kdeappsver}
 BuildRequires:	ka5-kcalutils-devel >= %{kdeappsver}
-BuildRequires:	ka5-kdepim-apps-libs-devel >= %{kdeappsver}
-BuildRequires:	ka5-kdepim-apps-libs-devel >= %{kdeappsver}
 BuildRequires:	ka5-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka5-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka5-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka5-pimcommon-devel >= %{kdeappsver}
 BuildRequires:	ka5-pimcommon-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kcalendarcore-devel >= %{kframever}
 BuildRequires:	kf5-kcodecs-devel >= %{kframever}
 BuildRequires:	kf5-kguiaddons-devel >= %{kframever}
 BuildRequires:	kf5-kholidays-devel >= %{kframever}
@@ -87,11 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/calendarsupport.categories
-/etc/xdg/calendarsupport.renamecategories
 %attr(755,root,root) %ghost %{_libdir}/libKF5CalendarSupport.so.5
 %attr(755,root,root) %{_libdir}/libKF5CalendarSupport.so.5.*.*
 %{_datadir}/kservicetypes5/calendarplugin.desktop
+%{_datadir}/qlogging-categories5/calendarsupport.categories
+%{_datadir}/qlogging-categories5/calendarsupport.renamecategories
 
 %files devel
 %defattr(644,root,root,755)
