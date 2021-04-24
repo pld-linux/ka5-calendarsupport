@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		calendarsupport
 Summary:	Calendarsupport
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bc7fa09534b25cbc47555b64d54785b0
+# Source0-md5:	4072b6344a4549007150e1baeebc742c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -86,8 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5CalendarSupport.so.5
-%attr(755,root,root) %{_libdir}/libKF5CalendarSupport.so.5.*.*
+%ghost %{_libdir}/libKF5CalendarSupport.so.5
+%attr(755,root,root) %{_libdir}/libKF5CalendarSupport.so.*.*.*
 %{_datadir}/kservicetypes5/calendarplugin.desktop
 %{_datadir}/qlogging-categories5/calendarsupport.categories
 %{_datadir}/qlogging-categories5/calendarsupport.renamecategories
@@ -98,5 +98,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/calendarsupport
 %{_includedir}/KF5/calendarsupport_version.h
 %{_libdir}/cmake/KF5CalendarSupport
-%attr(755,root,root) %{_libdir}/libKF5CalendarSupport.so
+%{_libdir}/libKF5CalendarSupport.so
 %{_libdir}/qt5/mkspecs/modules/qt_CalendarSupport.pri
