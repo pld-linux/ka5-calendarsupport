@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		calendarsupport
 Summary:	Calendarsupport
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7d8cf0854cd2f2cf8dcd5f8ada0d2959
+# Source0-md5:	050b68b1ac1dc67a01870a81d20df0b6
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -97,7 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %ghost %{_libdir}/libKF5CalendarSupport.so.5
 %attr(755,root,root) %{_libdir}/libKF5CalendarSupport.so.*.*.*
-%{_datadir}/kservicetypes5/calendarplugin.desktop
 %{_datadir}/qlogging-categories5/calendarsupport.categories
 %{_datadir}/qlogging-categories5/calendarsupport.renamecategories
 
